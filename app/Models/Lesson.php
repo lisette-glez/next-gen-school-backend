@@ -10,4 +10,12 @@ class Lesson extends Model
     use HasFactory;
     
     protected $guarded = ['id'];
+
+    /**
+    * Get the quizzes for the lesson.
+    */
+    public function quizzes()
+    {
+        return $this->hasMany(Quiz::class);
+    }
 }

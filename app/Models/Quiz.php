@@ -17,4 +17,12 @@ class Quiz extends Model
     {
         return $this->hasMany(Question::class);
     }
+    
+    /**
+    * Get the quiz ratings for the quiz.
+    */
+    public function quiz_ratings()
+    {
+        return $this->hasMany(QuizRating::class);
+    }
 }
