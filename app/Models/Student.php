@@ -14,4 +14,20 @@ class Student extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Get the quiz ratings for the student.
+     */
+    public function student_quiz_ratings()
+    {
+        return $this->hasMany(QuizRating::class);
+    }
+
+    /**
+     * Get the enrollments for the student.
+     */
+    public function studentEnrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
 }

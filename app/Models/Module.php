@@ -18,4 +18,12 @@ class Module extends Model
     {
         return $this->hasMany(Lesson::class);
     }
+
+    /**
+    * Get the progress for the module.
+    */
+    public function moduleProgress()
+    {
+        return $this->hasMany(Progress::class);
+    }
 }

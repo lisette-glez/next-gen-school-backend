@@ -18,4 +18,12 @@ class Course extends Model
     {
         return $this->hasMany(Module::class);
     }
+
+    /**
+     * Get the enrollments for the course.
+     */
+    public function courseEnrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
 }

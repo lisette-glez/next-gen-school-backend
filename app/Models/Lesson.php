@@ -18,4 +18,12 @@ class Lesson extends Model
     {
         return $this->hasMany(Quiz::class);
     }
+
+    /**
+    * Get the progress for the lesson.
+    */
+    public function lessonProgress()
+    {
+        return $this->hasMany(Progress::class);
+    }
 }
