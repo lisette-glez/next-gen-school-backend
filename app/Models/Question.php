@@ -10,4 +10,11 @@ class Question extends Model
     use HasFactory;
     protected $guarded = ['id'];    
 
+    /**
+    * Get the answers for the question.
+    */
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }
