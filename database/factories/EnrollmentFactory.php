@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Student;
+use App\Models\User;
 use App\Models\Course;
 use App\Enums\EnrollmentStatus;
 
@@ -20,7 +20,7 @@ class EnrollmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => Student::factory(),
+            'student_id' => User::factory(),
             'course_id' => Course::factory(),
             'enrollment_date' => fake()->date('Y-m-d'),
             'status' => fake()->randomElement(EnrollmentStatus::cases())->value,          

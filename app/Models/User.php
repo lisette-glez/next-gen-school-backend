@@ -45,8 +45,27 @@ class User extends Authenticatable
         ];
     }
 
-    public function student()
+    /**
+     * Get the quiz ratings for the student.
+     */
+    public function student_quiz_ratings()
     {
-        return $this->hasOne(Student::class);
+        return $this->hasMany(QuizRating::class);
+    }
+
+    /**
+     * Get the enrollments for the student.
+     */
+    public function studentEnrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
+
+     /**
+     * Get the courses for the seller.
+     */
+    public function sellerCourses()
+    {
+        return $this->hasMany(Course::class);
     }
 }
