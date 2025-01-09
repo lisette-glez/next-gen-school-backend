@@ -20,7 +20,7 @@ class QuizRatingFactory extends Factory
     {
         return [
             'quiz_id' => Quiz::factory(),
-            'student_id' => User::factory(),
+            'user_id' => User::factory(),
             'rating' => fake()->numberBetween(1, 5),
             'review' => fake()->sentence(),
         ];

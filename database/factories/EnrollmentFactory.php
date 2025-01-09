@@ -20,7 +20,7 @@ class EnrollmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => User::factory(),
+            'user_id' => User::factory(),
             'course_id' => Course::factory(),
             'enrollment_date' => fake()->date('Y-m-d'),
             'status' => fake()->randomElement(EnrollmentStatus::cases())->value,          

@@ -18,7 +18,7 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'seller_id' => User::factory(),
+            'user_id' => User::factory(),
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
             'price' => fake()->randomFloat(2, 0, 100),
