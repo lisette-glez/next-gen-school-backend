@@ -35,15 +35,20 @@ class CourseController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        $course = Course::find($id);
+    {       
+        $course = Course::with([
+            'modules' => function ($query) {
+                $query->orderBy('order');
+            },
+            'modules.lessons' => function ($query) {
+                $query->orderBy('order');
+            }
+        ])->find($id);
 
         if (!$course) {
             return response()->json(['message' => 'Course not found'], 404);
         }
-
-        // get all modules for a specific course
-        $course->modules;
+       
         return response()->json($course);
     }
 
