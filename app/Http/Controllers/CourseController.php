@@ -42,6 +42,8 @@ class CourseController extends Controller
             return response()->json(['message' => 'Course not found'], 404);
         }
 
+        // get all modules for a specific course
+        $course->modules;
         return response()->json($course);
     }
 

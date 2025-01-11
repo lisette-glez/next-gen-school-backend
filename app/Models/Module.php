@@ -26,4 +26,12 @@ class Module extends Model
     {
         return $this->hasMany(Progress::class);
     }
+
+     /**
+    * Get the course that owns the module.
+    */
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
